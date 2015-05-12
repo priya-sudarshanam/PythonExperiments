@@ -37,7 +37,7 @@ public class CArrays {
 	 * @return <code>true</code> if the given <code>String</code> 
 	 * contains unique characters, <code>false</code> otherwise.
 	 */
-	private static Boolean hasAllUniqueChars(String string) {
+	public static Boolean hasAllUniqueChars(String string) {
 		boolean[] asciiTable = new boolean[Byte.MAX_VALUE];
 		for(int i=0, asciiIndex=0; i<string.length(); i++) {
 			asciiIndex = (int) (string.charAt(i));
@@ -45,7 +45,7 @@ public class CArrays {
 				return (Boolean.FALSE); 
 			}
 			asciiTable[asciiIndex] = Boolean.TRUE;
-		}	
+		}
 		return (Boolean.TRUE);
 	}
 }
