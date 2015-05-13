@@ -26,7 +26,8 @@ public class CArrays {
 		} catch (IOException ioException) {
 			ioException.printStackTrace();
 		}
-		System.out.println(CArrays.hasAllUniqueChars(string));
+		//System.out.println(CArrays.hasAllUniqueChars(string));
+		System.out.println(CArrays.cStyleReverse(string));
 	}
 
 	/**
@@ -47,5 +48,22 @@ public class CArrays {
 			asciiTable[asciiIndex] = Boolean.TRUE;
 		}
 		return (Boolean.TRUE);
+	}
+	
+	/**
+	 * Reverses the given <code>string</code> as a C-Style string
+	 * including a null character at the end. 
+	 * 
+	 * @param string - the string to reverse
+	 * @return the reversed <code>String</code> including a null character.
+	 */
+	public static String cStyleReverse(String string) {
+		char NULL_CHARACTER = '\u0000';
+		String reverseString = new String();
+		for(int i=string.length()-1; i>=0; i--) {
+			reverseString += string.charAt(i);
+		}
+		reverseString += NULL_CHARACTER;
+		return (reverseString);
 	}
 }
