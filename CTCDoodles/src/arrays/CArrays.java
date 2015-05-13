@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
  * on Arrays and Strings. 
  * 
  * @author dangiankit 
- * Last modified on: May 12, 2015
+ * Created on: May 12, 2015
  */
 public class CArrays {
 	
@@ -26,8 +26,8 @@ public class CArrays {
 		} catch (IOException ioException) {
 			ioException.printStackTrace();
 		}
-		//System.out.println(CArrays.hasAllUniqueChars(string));
-		System.out.println(CArrays.cStyleReverse(string));
+		System.out.println(CArrays.hasAllUniqueChars(string));
+		System.out.println(CArrays.removeDuplicateChars(string));
 	}
 
 	/**
@@ -65,5 +65,24 @@ public class CArrays {
 		}
 		reverseString += NULL_CHARACTER;
 		return (reverseString);
+	}
+	
+	/**
+	 * Removes the duplicate characters from the given <code>string</code>.
+	 * 
+	 * @param string - the string from which the duplicate 
+	 * characters need to be removed
+	 * 
+	 * @return a <code>String</code> that contains all 
+	 * unique characters of the given <code>string</code>. 
+	 */
+	public static String removeDuplicateChars(String string) {
+		String uniqueCharsString = new String("");
+		for(int i=0; i<string.length(); i++) {
+			char c = string.charAt(i);
+			if(!uniqueCharsString.contains(String.valueOf(c)))
+				uniqueCharsString += c;
+		}
+		return (uniqueCharsString);
 	}
 }
