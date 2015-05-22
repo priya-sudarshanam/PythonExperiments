@@ -416,6 +416,6 @@ def coinChange(amt,d):
     print "Minimum Number of coins to get change: ",l[amt]
     print "\n The denominations are : (a) %d (b) %d " %(first,second)
     
-coinChange(6,[1,3,4])
+#coinChange(6,[1,3,4])
 
 

@@ -1,4 +1,5 @@
 #stack class and its functions
+import sys
 class Stack:
     def __init__(self):
         self.items = []
@@ -10,13 +11,22 @@ class Stack:
         self.items.append(item)
 
     def pop(self):
-        return self.items.pop()
+        if not self.isEmpty():
+           return self.items.pop()
 
     def peek(self):
         return self.items[len(self.items) - 1]
 
     def size(self):
         return len(self.items)
+
+    
+s = Stack()
+print s.isEmpty()
+##s.push(4)
+##s.push(6)
+##s.push(8)
+print s.minStack([4,6,8])
 
 #balancing of paranthesis
 ##def paranChecking(paranString):
@@ -43,11 +53,7 @@ class Stack:
 ###       index += 1
 ##     return "unbalanced" if not (balanced and s.isEmpty()) else "balanced"
 
-##s = Stack()
-##print s.isEmpty()
-##s.push(4)
-##s.push(6)
-##s.push(8)
+
 ##print s.isEmpty()
 ##print s.pop()
 ##print s.peek()
@@ -64,38 +70,38 @@ class Stack:
 ##print paranChecking("{()](())") #unbalanced
 
 
-def decToBinary(n):
-    s = Stack()
-    q=0
-    div = 2
-    even = [0,2,4,6,8]
-    m= n
-    a = ""
-    x = ""
-    k = "-0b"
-    if n == 0:
-      print 0    
-    else:
-      if n <0:
-        n = abs(n)
-      while  not n/div == q:        
-        if int(str(n)[-1]) in even:
-            s.push(0)
-        else:
-            s.push(1)
-        q = n/div 
-        n = q       
-    while not s.isEmpty():
-        x += str(s.pop())
-        
-    if m < 0:
-       a = k + x + "\n"
-    else:
-       a = x +"\n"
-    return a
-
-print decToBinary(0)
-print decToBinary(-42)
-print decToBinary(233)
+##def decToBinary(n):
+##    s = Stack()
+##    q=0
+##    div = 2
+##    even = [0,2,4,6,8]
+##    m= n
+##    a = ""
+##    x = ""
+##    k = "-0b"
+##    if n == 0:
+##      print 0    
+##    else:
+##      if n <0:
+##        n = abs(n)
+##      while  not n/div == q:        
+##        if int(str(n)[-1]) in even:
+##            s.push(0)
+##        else:
+##            s.push(1)
+##        q = n/div 
+##        n = q       
+##    while not s.isEmpty():
+##        x += str(s.pop())
+##        
+##    if m < 0:
+##       a = k + x + "\n"
+##    else:
+##       a = x +"\n"
+##    return a
+##
+##print decToBinary(0)
+##print decToBinary(-42)
+##print decToBinary(233)
 
         

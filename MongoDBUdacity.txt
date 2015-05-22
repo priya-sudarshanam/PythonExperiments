@@ -1,0 +1,5 @@
+Title,Released,Label,UK Chart Position,US Chart Position,BPI Certification,RIAA Certification
+Please Please Me,22 March 1963,Parlophone(UK),1,-,Gold,Platinum
+With the Beatles,22 November 1963,Parlophone(UK),1,-,Platinum,Gold
+Beatlemania! With the Beatles,25 November 1963,Capitol(CAN),-,-,,
+Introducing... The Beatles,10 January 1964,Vee-Jay(US),-,2,,

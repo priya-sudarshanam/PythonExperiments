@@ -110,13 +110,13 @@ class CircularList:
         fast = slow.getNext()
         while fast.getNext() <> None:
           if (fast == slow or fast.getNext() == slow):
-                circular = True
+                circular = True                
                 break
           else:
                 slow = slow.getNext()
                 fast = fast.getNext().getNext()
                 
-        return circular        
+        return circular,slow.getData()       
         
 myList = CircularList()
 myList.add(16)
@@ -130,5 +130,5 @@ myList.addAfterHead(17)
 #print myList.pop()
 #print myList.removeHead()
 print myList.printList()
-print myList.getCenterElt()
+#print myList.getCenterElt()
 print myList.isCircular()

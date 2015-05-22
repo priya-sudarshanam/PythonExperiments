@@ -1,3 +1,5 @@
+from isTriangle import *
+
 class Node:
     def __init__(self,initData):
         self.data = initData
@@ -82,12 +84,17 @@ class UnorderedList:
                 current = current.getNext()
         
         if found:
-          if previous == None:
-            self.head = current.getNext()
+            #with having references to previous element
+##          if previous == None:
+##            self.head = current.getNext()            
+##          else:
+##            previous.setNext(current.getNext())
+            #without having reference to previous element
+            temp = current.getNext()
+            current.setData(temp.getData())
+            current.setNext(temp.getNext())
             
-          else:
-            previous.setNext(current.getNext())
-          removed = True
+        removed = True
            
         
         return removed
@@ -133,6 +140,10 @@ class UnorderedList:
         temp.setNext(None)
         current.setNext(temp)
 
+    def delNode(self, item):
+        current = self.head
+        
+
     def revList(self):
         prev = None
         curr = self.head
@@ -146,21 +157,55 @@ class UnorderedList:
         while prev <> None:
             print prev.getData()
             prev = prev.getNext()
-        return
-   
-            
+        return   
+               
+
+def addNum(lst,lst2):
+    str1, str2 = "", ""   
+    for i,j in  zip(lst,lst2):
+      str1 += str(i)
+      str2 += str(j)
+    
+    sumNum = int(revStr(str1)) + int(revStr(str2))
+    myList = UnorderedList()
+    for i in str(sumNum):
+        myList.add(i)
+
+    myList.printList()
+  #  print sumNum
+
+
+##def delNode(UnorderedList):
+###  myList = UnorderedList()
+####  for i in itemLst():
+####      myList.add(i)
+##     
+##  myList.printList()
+##  temp = item.getNext()
+##  a.setData(temp.getData())
+##  a.setNext(temp.getNext())
+##  myList.printList()
+    
+#addNum([3,1,5],[5,9,2])
+
+#print delNode(30)
 myList = UnorderedList()
 myList.add(31)
 myList.add(24)
 myList.add(16)
 myList.add(30)
-##myList.add(35)
-##myList.add(60)
-##myList.add(55)
-print myList.middleElt()
+myList.add(35)
+myList.add(60)
+myList.add(55)
 myList.printList()
-myList.revList()
-#print myList.remove(24)
+#delNode(myList)
+##myList.delNode(35)
+##myList.printList()
+#print myList.middleElt()
+#
+#myList.revList()
+print myList.remove(35)
+myList.printList()
 #print myList.size()
 #print myList.index(31)
 #myList.pop()
@@ -170,3 +215,4 @@ myList.revList()
 ##print myList.index(16)
 #myList.insertAtTail(55)
 #print myList.isCircular()
+
